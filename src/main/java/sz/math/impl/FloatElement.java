@@ -27,7 +27,8 @@ public class FloatElement extends Element
         _hashComputed = false;
     }
 
-    public boolean equals( Object b)
+    @SuppressWarnings("EqualsWhichDoesntCheckParameterClass")
+    public boolean equals(Object b)
     {
         FloatElement bb = castIt(b);
         return _value == bb._value;
@@ -37,7 +38,7 @@ public class FloatElement extends Element
     {
         if( !_hashComputed )
         {
-            _hashValue = new Double(_value).hashCode();
+            _hashValue = Double.valueOf(_value).hashCode();
             _hashComputed = true;
         }
         return _hashValue;

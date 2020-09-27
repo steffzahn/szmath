@@ -6,9 +6,9 @@ import java.util.Objects;
 
 public abstract class Element
 {
-    private @NotNull Object _parent;
+    private final @NotNull Object _parent;
     
-    public Object getTheClass()
+    public @NotNull Object getTheClass()
     {
         return _parent;
     }

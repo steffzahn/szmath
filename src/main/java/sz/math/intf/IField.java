@@ -3,5 +3,5 @@ import sz.math.abstr.Element;
 
 public interface IField extends IUnitaryRing
 {
-    public Element inverse(Element a);
+    Element inverse(Element a);
 }

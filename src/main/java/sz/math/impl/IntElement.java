@@ -27,7 +27,8 @@ public class IntElement extends Element
         _hashComputed = false;
     }
 
-    public boolean equals( Object b)
+    @SuppressWarnings("EqualsWhichDoesntCheckParameterClass")
+    public boolean equals(Object b)
     {
         IntElement bb = castIt(b);
         return _value == bb._value;
@@ -37,7 +38,7 @@ public class IntElement extends Element
     {
         if( !_hashComputed )
         {
-            _hashValue = new Long(_value).hashCode();
+            _hashValue = Long.valueOf(_value).hashCode();
             _hashComputed = true;
         }
         return _hashValue;

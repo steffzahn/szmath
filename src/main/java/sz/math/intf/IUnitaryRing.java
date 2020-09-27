@@ -3,7 +3,8 @@ import sz.math.abstr.Element;
 
 public interface IUnitaryRing extends IRing
 {
-    public Element one();
+    Element one();
 
-    public boolean isOne(Element e);
+    @SuppressWarnings({"unused", "RedundantSuppression"})
+    boolean isOne(Element e);
 }

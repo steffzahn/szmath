@@ -1,24 +1,10 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Arrays;
-import java.util.Date;
-
-import sz.math.abstr.Group;
-import sz.math.abstr.Ring;
-import sz.math.abstr.UnitaryRing;
-import sz.math.abstr.EuclideanRing;
-import sz.math.abstr.Field;
-import sz.math.abstr.Element;
+import sz.math.abstr.*;
+import sz.math.impl.*;
 import sz.math.intf.IEuclideanRing;
 
-import sz.math.impl.IntGroup;
-import sz.math.impl.IntRing;
-import sz.math.impl.IntUnitaryRing;
-import sz.math.impl.IntEuclideanRing;
-import sz.math.impl.FloatGroup;
-import sz.math.impl.FloatRing;
-import sz.math.impl.FloatUnitaryRing;
-import sz.math.impl.FloatField;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
 
 
 class gtest

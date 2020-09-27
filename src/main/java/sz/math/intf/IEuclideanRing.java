@@ -3,14 +3,14 @@ import sz.math.abstr.Element;
 
 public interface IEuclideanRing extends IUnitaryRing
 {
-    public long norm(Element e);
+    long norm(Element e);
     
-    public interface Result
+    interface Result
     {
-        public Element quotient();
+        Element quotient();
 
-        public Element remainder();
+        Element remainder();
     }
     
-    public Result divideWithRemainder( Element a, Element b );
+    Result divideWithRemainder(Element a, Element b);
 }

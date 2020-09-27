@@ -1,11 +1,11 @@
 package sz.math.abstr;
 
+import org.jetbrains.annotations.NotNull;
 import sz.math.intf.IField;
-import java.util.Iterator;
 
 public abstract class Field extends UnitaryRing implements IField
 {
-    protected abstract Element inverse_(Element a);
+    protected abstract Element inverse_(@NotNull Element a);
     public Element inverse(Element a)
     {
         if( (a==null) || (a.getTheClass()!=this) )

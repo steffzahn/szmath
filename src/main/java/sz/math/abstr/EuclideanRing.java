@@ -1,11 +1,11 @@
 package sz.math.abstr;
 
+import org.jetbrains.annotations.NotNull;
 import sz.math.intf.IEuclideanRing;
-import java.util.Iterator;
 
 public abstract class EuclideanRing extends UnitaryRing implements IEuclideanRing
 {
-    protected abstract long norm_(Element a);
+    protected abstract long norm_(@NotNull Element a);
     public long norm(Element a)
     {
         if( (a==null) || (a.getTheClass()!=this) )
@@ -15,7 +15,7 @@ public abstract class EuclideanRing extends UnitaryRing implements IEuclideanRin
         return norm_(a);
     }
 
-    protected abstract IEuclideanRing.Result divideWithRemainder_( Element a, Element b );
+    protected abstract IEuclideanRing.Result divideWithRemainder_( @NotNull Element a, @NotNull Element b );
     public IEuclideanRing.Result divideWithRemainder( Element a, Element b )
     {
         if( (a==null) || (b==null) )

@@ -1,7 +1,6 @@
 package sz.math.abstr;
 
 import sz.math.intf.IUnitaryRing;
-import java.util.Iterator;
 
 public abstract class UnitaryRing extends Ring implements IUnitaryRing
 {
@@ -42,10 +41,8 @@ public abstract class UnitaryRing extends Ring implements IUnitaryRing
             throw new RuntimeException("product operation missing mandatory parameters");
         }
         Element result = one();
-        Iterator<Element> it = iterable.iterator();
-        while( it.hasNext() )
-        {
-            result = this.multiply( result, it.next() ); 
+        for (Element element : iterable) {
+            result = this.multiply(result, element);
         }
         return result;
     }

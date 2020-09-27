@@ -1,9 +1,10 @@
 package sz.math.abstr;
 
+import org.jetbrains.annotations.NotNull;
 import sz.math.intf.IGroup;
-import java.util.Iterator;
-import java.util.List;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Group implements IGroup
 {
@@ -22,7 +23,7 @@ public abstract class Group implements IGroup
         return result;
     }
     
-    protected abstract Element parse_(String s);
+    protected abstract Element parse_(@NotNull String s);
     public Element parse(String s)
     {
         if( s==null )
@@ -41,7 +42,7 @@ public abstract class Group implements IGroup
         return result;
     }
 
-    protected abstract Element add_( Element a, Element b );
+    protected abstract Element add_( @NotNull Element a, @NotNull Element b );
     public Element add( Element a, Element b )
     {
         if( (a==null) || (b==null) )
@@ -64,7 +65,7 @@ public abstract class Group implements IGroup
         return result;
     }
     
-    protected abstract boolean isZero_(Element e);
+    protected abstract boolean isZero_(@NotNull Element e);
     public boolean isZero(Element e)
     {
         if( e==null )
@@ -78,7 +79,7 @@ public abstract class Group implements IGroup
         return isZero_(e);
     }
     
-    protected abstract Element negative_(Element a);
+    protected abstract Element negative_(@NotNull Element a);
     public Element negative(Element a)
     {
         if( a==null )
@@ -114,10 +115,8 @@ public abstract class Group implements IGroup
             throw new RuntimeException("sum operation missing mandatory parameters");
         }
         Element result = zero();
-        Iterator<Element> it = iterable.iterator();
-        while( it.hasNext() )
-        {
-            result = this.add( result, it.next() ); 
+        for (Element element : iterable) {
+            result = this.add(result, element);
         }
         return result;
     }
@@ -128,11 +127,9 @@ public abstract class Group implements IGroup
         {
             throw new RuntimeException("parseList operation missing mandatory parameters");
         }
-        ArrayList<Element> result = new ArrayList<Element>();
-        Iterator<String> it = iterable.iterator();
-        while( it.hasNext() )
-        {
-            result.add( this.parse( it.next() ) );
+        ArrayList<Element> result = new ArrayList<>();
+        for (String s : iterable) {
+            result.add(this.parse(s));
         }
         return result;
     }

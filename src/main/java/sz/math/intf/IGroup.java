@@ -3,13 +3,13 @@ import sz.math.abstr.Element;
 
 public interface IGroup
 {
-    public Element zero();
+    Element zero();
     
-    public Element parse(String s);
+    Element parse(String s);
 
-    public Element add( Element a, Element b );
+    Element add(Element a, Element b);
 
-    public boolean isZero(Element e);
+    boolean isZero(Element e);
     
-    public Element negative(Element a);
+    Element negative(Element a);
 }

@@ -1,11 +1,11 @@
 package sz.math.abstr;
 
+import org.jetbrains.annotations.NotNull;
 import sz.math.intf.IRing;
-import java.util.Iterator;
 
 public abstract class Ring extends Group implements IRing
 {
-    protected abstract Element multiply_( Element a,Element b );
+    protected abstract Element multiply_(@NotNull Element a, @NotNull Element b );
     public Element multiply( Element a, Element b )
     {
         if( (a==null) || (b==null) )
